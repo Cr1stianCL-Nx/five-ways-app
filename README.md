@@ -12,7 +12,7 @@ Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. T
 - For NestJS/Axios Call
   curl --location "http://localhost:3000/api/nestjs-axios"
 
-- For axios Send
+- For NestJS/Axios Send
   curl --location "http://localhost:3000/api/nestjs-axios" \
    --header 'Content-Type: application/json' \
    --data '{
