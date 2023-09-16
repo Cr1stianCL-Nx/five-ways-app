@@ -7,12 +7,15 @@ import { NeedleHttpAdapter } from './adapters/needle.adapter';
 import { GotHttpAdapter } from './adapters/got.adapter';
 import { NodeFetchHttpAdapter } from './adapters/node-fetch.adapter';
 import { SuperAgentHttpAdapter } from './adapters/super-agent.adapter';
+import { NestJSAxiosHttpAdapter } from './adapters/nestjs-axios.adapter';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [],
+  imports: [HttpModule],
   controllers: [AppController],
   providers: [
     AppService,
+    NestJSAxiosHttpAdapter,
     AxiosHttpAdapter,
     NeedleHttpAdapter,
     GotHttpAdapter,

@@ -8,6 +8,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   /*GET IMPLEMENTATIONS */
+
+  @Get('nestjs-axios')
+  getNestJSAxiosCall() {
+    return this.appService.getNestJSAxiosData();
+  }
+
   @Get('axios')
   getAxiosCall() {
     return this.appService.getAxiosData();
@@ -35,6 +41,11 @@ export class AppController {
 
   /*POST IMPLEMENTATIONS */
 
+  @Post('nestjs-axios')
+  posNestJSAxiosSend(@Body() body: PostConsumeDto) {
+    return this.appService.postNestJSAxiosData(body);
+  }
+
   @Post('axios')
   postAxiosSend(@Body() body: PostConsumeDto) {
     return this.appService.postAxiosData(body);
@@ -58,15 +69,12 @@ export class AppController {
   @Post('super-agent')
   async postSuperAgentSend(@Body() body: PostConsumeDto) {
     const result = this.appService.postSuperAgentData(body);
-    console.log('res.body==>', result);
-
     return result;
   }
 
   /*POST CONSUME TEST*/
   @Post('post-consume')
   PostCross(@Body() body: PostConsumeDto) {
-    console.warn('body request=>', body);
     return {
       status: 'success',
       payload: true,

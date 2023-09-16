@@ -4,11 +4,13 @@ import { NeedleHttpAdapter } from './adapters/needle.adapter';
 import { GotHttpAdapter } from './adapters/got.adapter';
 import { NodeFetchHttpAdapter } from './adapters/node-fetch.adapter';
 import { SuperAgentHttpAdapter } from './adapters/super-agent.adapter';
+import { NestJSAxiosHttpAdapter } from './adapters/nestjs-axios.adapter';
 
 @Injectable()
 export class AppService {
   constructor(
     private readonly axiosAdapter: AxiosHttpAdapter,
+    private readonly nestJSAxiosAdapter: NestJSAxiosHttpAdapter,
     private readonly needleAdapter: NeedleHttpAdapter,
     private readonly gotAdapter: GotHttpAdapter,
     private readonly nodeFetchAdapter: NodeFetchHttpAdapter,
@@ -16,6 +18,10 @@ export class AppService {
   ) {}
 
   /*GET IMPLEMENTATION */
+
+  getNestJSAxiosData() {
+    return this.nestJSAxiosAdapter.doNestsJSAxiosCall();
+  }
   getAxiosData() {
     return this.axiosAdapter.doAxiosCall();
   }
@@ -37,6 +43,10 @@ export class AppService {
   }
 
   /*POST IMPLEMENTATION */
+
+  postNestJSAxiosData(body) {
+    return this.nestJSAxiosAdapter.doNestJSAxiosSend(body);
+  }
 
   postAxiosData(body) {
     return this.axiosAdapter.doAxiosSend(body);

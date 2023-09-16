@@ -9,6 +9,18 @@
 Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## CURL CONSUMERS FOR PROYECT
+- For NestJS/Axios Call
+  curl --location "http://localhost:3000/api/nestjs-axios"
+
+- For axios Send
+  curl --location "http://localhost:3000/api/nestjs-axios" \
+   --header 'Content-Type: application/json' \
+   --data '{
+  "param1": "name",
+  "param2": 3,
+  "param3": true
+  }'
+
 
 - For Axios Call
   curl --location 'http://localhost:3000/api/axios'
@@ -23,10 +35,10 @@ Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. T
   }'
 
 - For needle Call
-  curl --location 'http://localhost:3000/api/needle'
+  curl --location "http://localhost:3000/api/needle"
 
 - For nedle Send
-  curl --location 'http://localhost:3000/api/axios' \
+  curl --location "http://localhost:3000/api/axios" \
    --header 'Content-Type: application/json' \
    --data '{
   "param1": "name",
@@ -35,10 +47,10 @@ Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. T
   }'
 
 - For got Call
-  curl --location 'http://localhost:3000/api/got'
+  curl --location "http://localhost:3000/api/got"
 
 - For got Send
-  curl --location 'http://localhost:3000/api/got' \
+  curl --location "http://localhost:3000/api/got" \
    --header 'Content-Type: application/json' \
    --data '{
   "param1": "name",
@@ -47,10 +59,10 @@ Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. T
   }'
 
 - For node-fetch Call
-  curl --location 'http://localhost:3000/api/node-fetch'
+  curl --location "http://localhost:3000/api/node-fetch"
 
 - For node-fetch Send
-  curl --location 'http://localhost:3000/api/node-fetch' \
+  curl --location "http://localhost:3000/api/node-fetch" \
   --header 'Content-Type: application/json' \
   --data '{
   "param1": "name",
@@ -59,10 +71,10 @@ Run `nx serve five-ways` for a dev server. Navigate to http://localhost:4200/. T
   }'
 
 - For super-agent Call
-  curl --location 'http://localhost:3000/api/super-agent'
+  curl --location "http://localhost:3000/api/super-agent"
 
 - For super-agent Send
-  curl --location 'http://localhost:3000/api/super-agent' \
+  curl --location "http://localhost:3000/api/super-agent" \
   --header 'Content-Type: application/json' \
   --data '{
   "param1": "name",
